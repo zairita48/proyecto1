@@ -25,7 +25,7 @@
             <img src="data:image/png;base64,{{ imagen }}" width="400px" height="400px" alt="Grafico de Ventas">
          </article>
         <article class="articulo"> 
-            <h1>Grafico interactivo</h1>
+            <h1>Comparación de ventas</h1>
             <canvas id="chart5" style="width:500px; height:300px;"></canvas>
         </article>
          <article id="inicio"class="articulo"><P>En NARA, estamos comprometidos en proporcionarte todo lo que necesitas para una rutina de cuidado de la piel y maquillaje completa y efectiva. <img src='{{ url_for("static" , filename="imagenes/3.jpeg") }}' width="350px; height="350px><br><h1>¡Es hora de realzar tu belleza!</h1></P></article>
@@ -72,31 +72,36 @@
         <h2>CONTACTO: 3174089322</h2></br>
         <h2>EMAIL: zairanieto29@gmail.com</h2></br>
     </footer>
+
+
+
+                               
     <script>
-        const labels = {{ labels | tojson }};
-        const empresaA = {{ empresa_a | tojson }};
-        const empresaB = {{ empresa_b | tojson }};     
-        new Chart(document.getElementById("chart5"), { 
+        const labels= {{ labels | tojson }};
+        const Basico= {{ basico | tojson }};
+        const Premium= {{ premium | tojson }};
+        new Chart(document.getElementById("chart5"), {
             type: 'line',
             data: {
                 labels: labels,
                 datasets: [
                     {
-                        label: 'Empresa A',
-                        data: empresaA,
+                        label: 'Kit básico',
+                        data: Basico,
                         borderColor: 'rgba(255, 99, 132, 1)',
                         fill: false
                     },
                     {
-                        label: 'Empresa B',
-                        data: empresaB,
+                        label: 'Kit premium',
+                        data: Premium,
                         borderColor: 'rgba(54, 162, 235, 1)',
                         fill: false
                     }
                 ]
             },
-            Options: { responsive: false }
-        });          
+            option: { responsive: false }
+        });
     </script>
+    
 </body>
 </html> 
