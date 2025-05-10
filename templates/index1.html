@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mi sitio web</title>
+    <link rel="stylesheet" href='{{ url_for("static" , filename="estilos.css" ) }}'  type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>                                <!--es  un conjunto de librerias que se encuentran en la nube-->
+</head>
+<body>
+    <button onclick="mostrarmMensaje()"> Haz clic aqui</button>
+    <header id="cabecera"><img class="logo" src='{{ url_for("static" , filename="imagenes/1.jpeg") }}'></header>
+<nav id="menu">
+        <a href="#inicio" class="nav-enlace">Inicio </a>
+        <a href="#productos" class="nav-enlace">Productos </a>
+        <a href="{{ url_for('pagina2') }}" class="nav-enlace">Promociones </a>
+        <a href="#contacto" class="nav-enlace">Contacto </a>
+    </nav>    <!--este es el menu principal-->
+    <div id="cuerpo">
+    <section id="seccion">
+         <article id="inicio"class="articulo"><h1>Bienvenidos a NARA:</h1><P class="parrafo1">Que somos?, en NARA, nos apaciona ayudarte a descubrir tu belleza natural y a sentirte segura en tu propia piel. Somos un emprendimiento dedicado al cuidado de la piel y el maquillaje, comprometidos con ofrecer productos de alta calidad que se adapten a tus necesidades individuales.</P></article>
+         <article class="articulo"><img src='{{ url_for("static" , filename="imagenes/2.jpg")}}' width="350px" height="350px"><P>Te ofrecemos una guia detallada de todos nuestros productos, destacando sus ingredientes clave y beneficios para que puedas tomar decisiones informadas</P></article>
+         <article class= "articulo">
+            <h1>Grafico de crecimiento de Ventas</h1>
+            <img src="data:image/png;base64,{{ imagen }}" width="400px" height="400px" alt="Grafico de Ventas">
+         </article>
+        <article class="articulo"> 
+            <h1>Grafico interactivo</h1>
+            <canvas id="chart5" style="width:500px; height:300px;"></canvas>
+        </article>
+         <article id="inicio"class="articulo"><P>En NARA, estamos comprometidos en proporcionarte todo lo que necesitas para una rutina de cuidado de la piel y maquillaje completa y efectiva. <img src='{{ url_for("static" , filename="imagenes/3.jpeg") }}' width="350px; height="350px><br><h1>¡Es hora de realzar tu belleza!</h1></P></article>
+        <article id="productos"class="articulo"><h1><strong>KITS</strong></h1> <table border="2">
+               <tr>
+                <td><img src='{{ url_for("static" , filename="imagenes/kit 1.png") }}' width="500px" height="450px"></td>
+                <td><h2>KIT DE ARROZ X6</h2><p>Este kit es una solución integral para el cuidado facial, ofreciendo una variedad de productos que trabajan juntos para mejorar la salud y la apariencia de tu piel.</p>
+                <br><h2>$79.000</h2>
+                </td>
+            </tr>
+                <td><img src='{{ url_for("static" , filename="imagenes/Kit-tomate.jpg") }}' width="500px" height="450px"></td>
+                <td><h2>KIT DE TOMATE X4 IMAGES</h2><p>El tomate es conocido por sus beneficios para la piel debido a su rico contenido de antioxidantes, vitaminas y minerales.Este kit incluye cuatro productos como: Limpiador, Serum, Hidratante y Tónico refrescante.</p>
+                    <br><h2>$55.000</h2>
+                </tr>
+                </table></article>
+        <article id="inicio"class="articulo"><h2>MANEJO DE BASE DE DATOS:</h2><P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus id pariatur quaerat exercitationem architecto corporis, dolore asperiores dolorem velit nesciunt dolor, repudiandae totam odit, aspernatur excepturi quisquam laborum nihil blanditiis!este es el espacio del articulo 2</P></article>
+        <article id="inicio"class="articulo"><h2>MANEJO DE BASE DE DATOS:</h2><P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus id pariatur quaerat exercitationem architecto corporis, dolore asperiores dolorem velit nesciunt dolor, repudiandae totam odit, aspernatur excepturi quisquam laborum nihil blanditiis!este es el espacio del articulo 2</P></article>
+        <article id="inicio"class="articulo"><h2>MANEJO DE BASE DE DATOS:</h2><P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus id pariatur quaerat exercitationem architecto corporis, dolore asperiores dolorem velit nesciunt dolor, repudiandae totam odit, aspernatur excepturi quisquam laborum nihil blanditiis!este es el espacio del articulo 2</P></article>
+        <article id="inicio"class="articulo"><h2>MANEJO DE BASE DE DATOS:</h2><P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus id pariatur quaerat exercitationem architecto corporis, dolore asperiores dolorem velit nesciunt dolor, repudiandae totam odit, aspernatur excepturi quisquam laborum nihil blanditiis!este es el espacio del articulo 2</P></article>
+
+        </section> 
+    <aside id="lateral">
+        <form name="Formulario">
+        <h1>Formulario web</h1>
+        <table>
+            <tr><td>Nombre:</td><td><input type="text" name="txtNombre" required></td></tr>
+            <tr><td>Correo:</td><td><input type="email" name="miEmail" placeholder="Ingrese email"></td></tr>
+            <tr><td>Celular:</td><td><input type="number" name="numEst" step="1"></td></tr>
+            <tr><td>Ciudad:</td><td><input type="text" name="txtNombre" required></td></tr>
+            <tr><td><input type="submit" name="btnEnviar" value="Enviar"></td></tr>   
+        </table>
+        </form>
+        <br>
+        <table id="contacto"><h1> REDES SOCIALES</h1></table>
+            <tr>¡Para brindarte una atencion mas personalizada y detallada, te invitamos a ponerte en contacto con nosotros!.</tr>
+            <br>
+            <tr><img src='{{ url_for("static" , filename="imagenes/WAWA.png") }}' width="225" height="215"><br> WHATSAPP: 315 3463778</tr>
+            <tr><img src='{{ url_for("static" , filename="imagenes/INTA.png") }}' width="225" height="215"><br> INSTAGRAM: cuidado_facial_NARA</tr>
+            <tr><img src='{{ url_for("static" , filename="imagenes/FACE.png") }}' width="225" height="215"></id><br> FACEBOOK: Cuidado facial</tr>
+        </table>
+    </aside>
+    <footer id="pie"><h2>HORARIOS: Lunes a viernes de 8am a 6 pm </h2><br>
+        <h2>DIRECCION: Carrera 11 Cll 25</h2></br>
+        <h2>CONTACTO: 3174089322</h2></br>
+        <h2>EMAIL: zairanieto29@gmail.com</h2></br>
+    </footer>
+    <script>
+        const labels = {{ labels | tojson }};
+        const empresaA = {{ empresa_a | tojson }};
+        const empresaB = {{ empresa_b | tojson }};     
+        new Chart(document.getElementById("chart5"), { 
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Empresa A',
+                        data: empresaA,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        fill: false
+                    },
+                    {
+                        label: 'Empresa B',
+                        data: empresaB,
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        fill: false
+                    }
+                ]
+            },
+            Options: { responsive: false }
+        });          
+    </script>
+</body>
+</html> 
