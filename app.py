@@ -19,6 +19,7 @@ def home():
 def pagina2():
    return render_template("index2.html")
 
+#______________________________________________________________________________
 
 @app.route('/grafico_ventas/')
 def grafico_ventas():
@@ -58,8 +59,27 @@ def login():
     </form> '''
 
 
+@app.route('/grafico1/')
+def grafico1():
+#Datos para el gráfico
+    x=[1,2,3,4,5]
+    y=[10,14,16,20,25]
+#Creación del gráfico
+    plt.figure(figsize=(6, 4))
+    plt.plot(x, y, marker='o', linestyle='-', color='b')
+    plt.title('crecimiento de ventas')
+    plt.xlabel('Mes')
+    plt.ylabel('Ventas')
+#Guardar gráfico en un buffer
+    buf= io.BytesIO()
+    plt.savefig(buf, format='png')
+    buf.seek(0)
+#codificar imagen en base64
+    imagen_64= base64.b64encode(buf.getvalue()).decode('utf8')
+    return render_template('index2.html', imagen1= imagen_64)
+
 #>>>--------------------------------->  Imagen con plot
-@app.route('/proyectoFinal')
+@app.route('/proyectoFinal/')
 def integrarGraficos():
     
         año= ['2020', '2021', '2022', '2023', '2024', '2025']
@@ -76,27 +96,12 @@ def integrarGraficos():
         buf.seek(0)
         imagen= base64.b64encode(buf.getvalue()).decode('utf8')
 
-        df= pd.read_csv('data/Ventas.csv')
-
-    #Agrupar por producto y sumar ventas
-        df.groupby('Pago')['Costo'].plot(kind= 'bar', color='purple')
-   
-#Creación del gráfico
-        plt.title('Modos de pago mas usados')
-        plt.xlabel('Producto')
-        plt.ylabel('Ventas Totales')
-    
-#Guardar gráfico en un buffer
-        buf= io.BytesIO()
-        plt.savefig(buf, format='png')
-        buf.seek(0)
-#codificar imagen en base64
-        imagen1 = base64.b64encode(buf.getvalue()).decode('utf8')
-
-
 
 #>>>---------------------------------> Imagen dinámica
         labels= ["Enero", "Febrero", "Marzo", "Abril"]
         basico= [9, 6, 9, 8]
         premium= [5, 8, 4, 7]
-        return render_template("index1.html", labels= labels, basico= basico, premium= premium, imagen= imagen, imagen1= imagen1)
+        return render_template("index1.html", labels= labels, basico= basico, premium= premium, imagen= imagen)
+
+#________________________________________________________________________________________________________________
+
