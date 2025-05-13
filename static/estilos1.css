@@ -1,0 +1,152 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+h1{
+    font:bold;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    text-shadow: 7px 4px 5px #ab095f;
+}
+h2{
+    text-align: center;
+    font:bold 14px Times New Roman; 
+    text-shadow: 7px 4px 5px #b61071;
+}
+
+body{
+    text-align: center;
+    background-image:'{{ url_for("static" , filename="imagenes/ROSITA.jpg") }}';
+}
+
+#cuerpo{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 15px auto ;
+    padding: 0 15px;
+    gap: 20px;
+    
+} 
+
+#cabecera {
+    background: #f570c2;
+    border: 1px solid #c660f6;
+    padding: 20px;
+    text-align: center; 
+}
+
+.logo{
+    clip-path: circle(45%);
+    width: 920px;height: 500px;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;                 /* alinea verticalmente*/
+    background:#e7e7e7c7;
+    padding: 5px 15px;                   /*menor altura*/
+    gap: 10px;
+}
+.nav-enlace {
+    flex: 0 0 120px;                    /* mismo tamaño horzintal*/
+    height: 36px;                       /* altura exacta para todos*/
+    display: flex;                      /* centra texto verticalmente*/
+    align-items: center;
+    justify-content: center;
+    background: #eb05b1;   
+    color: #030202;
+    text-align: center;
+    text-decoration:none;
+    -moz-border-radius: 20px;
+    -webkit-border-radius:20px;
+    border-radius: 20px;
+    -moz-box-shadow: rgb(62, 197, 238) 5px 5px;
+    -webkit-box-shadow: rgb(195, 116, 229) 5px 5px;
+    box-shadow:rgb(44, 19, 134)  5px 5px;
+}
+
+/* En pantallas pequeñas: que se apilen */
+@media (max-width: 600px) {
+    .nav-enlace {
+        flex: 1 1 100%;
+    }
+}
+
+.nav-enlace:hover{
+    background:#f59ed4 ;
+} /*se coloca hover cuando se quiere poner color cuando se seleccione un boton*/
+
+#seccion{
+    padding: 10px 50px 10px 50px;
+    background: rgb(246, 144, 239);
+}
+.articulo {
+    background: #f9d7f4;
+    border: 1px solid #999999;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 15px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius:20px;
+    border-radius: 20px;
+    -moz-box-shadow: rgb(121, 8, 74) 5px 5px;
+    -webkit-box-shadow: rgb(65, 12, 75) 5px 5px;
+    box-shadow:rgb(44, 19, 134) 5px 5px;
+}
+.articulo{
+    text-align: center;
+}
+p{
+    color:#0e0b0b;
+    background-color:#d4cad0;
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight:lighter;
+    font-style:normal;
+    text-align: justify;
+
+}
+
+span.sub{
+    vertical-align: super;
+}
+
+.parrafo1 {
+    color:#130503;
+    background-color:#d4cad0;
+}
+#lateral {
+    flex: 1 1 30%;
+    min-width: 250px;
+    padding: 20px;
+    background: #fad5f4;
+}
+
+table{
+    text-shadow: #ed4fcb 2px 2px 2px;
+    text-align: 28px center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    line-height: 2.2;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+#pie {
+    clear:both;
+    text-align: 28px center;
+    padding: 20px;
+    border-top: 5px solid #fccdf2;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+img, canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}

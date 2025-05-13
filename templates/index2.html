@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href='{{ url_for("static" , filename="estilos.css" ) }}'  type="text/css">
+    <link rel="stylesheet" href='{{ url_for("static" , filename="estilos1.css" ) }}'  type="text/css">
     <title>Document</title>
 </head>
 <body> 
     <header id="cabecera"><img class="logo" src='{{ url_for("static" , filename="imagenes/1.jpeg") }}'></header>
     <h1>Promociones</h1>
-
+    <div id="cuerpo"></div>
+    <section id="seccion">
+<article id="productos"class="articulo"><table border="2">
+       <tr>
+        <td><img src='{{ url_for("static" , filename="imagenes/morrall.png") }}' width="500px" height="450px"></td>
+        <td><h2>NECESER WASHBAG GRANDE</h2><p>Es una herramienta esencial para mantener organizados y transportar productos de cuidado personal y maquillaje.</p>
+        <br><h2>Antes a <del>$19.000</del>, ahora a <strong>$14.000 mil</strong></h2>
+     </td>
+    </tr>
+    </table>
+    <h1>Comparación de ventas</h1>
+    <img src="data:image/png;base64,{{ imagen1 }}" width="400px" height="400px" alt="Grafico de Ventas">
+</section>
 </body>
 </html>
